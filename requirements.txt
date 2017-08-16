@@ -1,4 +1,10 @@
+amqp==2.2.1
 beautifulsoup4==4.6.0
-Django==1.11.4
+billiard==3.5.0.3
+celery==4.1.0
+Django==1.11
+kombu==4.1.0
 pytz==2017.2
+redis==2.10.5
+vine==1.1.4
 youtube-dl==2017.8.13

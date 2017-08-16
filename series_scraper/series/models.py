@@ -12,7 +12,7 @@ class Series(models.Model):
 class Seasons(models.Model):
     name = models.CharField(max_length=20)
     url = models.URLField
-    series = models.ForeignKey(Series, on_delete=models.Cascade)
+    series = models.ForeignKey(Series, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
