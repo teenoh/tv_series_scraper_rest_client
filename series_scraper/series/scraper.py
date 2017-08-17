@@ -1,6 +1,7 @@
 # from __future__ import unicode_literals
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
+import json
 #import os
 #import re
 from pprint import pprint
@@ -30,7 +31,7 @@ from pprint import pprint
 """
 
 
-def scrape_site(url):
+def scrape_site(url, get_image=False):
     with urlopen(url) as f:
         soup = BeautifulSoup(f, "html.parser")
         divs = soup.find_all("div", class_="data")
@@ -52,7 +53,7 @@ def pagination(url):
 
 
 def get_series_links():
-    series = scrape_site("http://tvshows4mobile.com/search/list_all_tv_series")
+    series = scrape_site("http://tvshows4mobile.com/search/list_all_tv_series", get_image=True)
     return series
 
 
@@ -77,14 +78,13 @@ def get_episodes_links(series_link):
     for season, links in seasons.items():
         episodes[season] = {}
         for link in links:
-            episodes[season].update(scrape_site(link))
+            episode_pages = scrape_site(link)
+            episodes[season].update({x: get_download_link(y) for x,y in episode_pages.items()})
             # episodes[season].update(episode_dict)
     return episodes
 
 
-# def get_episodes_links(season_link):
-#   episodes = scrape_site(season_link)
-#  return episodes
+
 
 def get_download_link(episode_link):
     with urlopen(episode_link) as f:
@@ -98,9 +98,29 @@ def get_download_link(episode_link):
         # if string == "3gp": return links["3gp"]
         return links["mp4"]
 
+#dump sample data
+def dump_sample_data():
+    data = get_series_links()
+    counter = 0
+    episode_links = {}
+    for key, value in data.items():
+        episode_links.update({key: get_episodes_links(value)})
+        if counter >= 10:
+            break
 
-series = get_series_links()
-pprint(series)
+    with open('data.json', 'w') as fp:
+        data = json.dump(episode_links, fp)
+        fp.close()
+
+
+#load json data
+def load_sample_data():
+    with open('data.json', 'r') as fp:
+        data = json.load(fp)
+        fp.close()
+        return data
+
+#pprint(series)
 # boy = series['agents of shield']
 # guy = get_episodes_links(boy)
 # print(guy)
@@ -109,3 +129,16 @@ pprint(series)
 
 # pprint(get_episodes_links(r"http://tvshows4mobile.com/The-Flash-3/index.html"))
 # pprint(scrape_site(r"http://tvshows4mobile.com/The-Flash-3/index.html"))
+# series= get_series_links()
+# for key, value in series.items():
+#         episode_links = get_episodes_links(value)
+#         updated_episode_links = {}
+#         for season, episode in episode_links:
+#             updated_episode_links.update(
+#                               { season:
+#                                   { epis:
+#                                       get_download_link() for epis, link in episode}
+#                                })
+# ...     all_links = {key: updated_episode_links}
+# ...     pprint(all_links)
+#
