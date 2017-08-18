@@ -15,7 +15,7 @@ class Seasons(models.Model):
     series = models.ForeignKey(Series, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.name
+        return "{ser}-{sea}".format(ser=self.series, sea=self.name)
 
 class Episodes(models.Model):
     name = models.CharField(max_length=20)
@@ -23,5 +23,8 @@ class Episodes(models.Model):
     season = models.ForeignKey(Seasons, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.name
+        return "{ser}-{sea}-{epis}".format(ser=self.season.series,
+                                           sea=self.season,
+                                           epis=self.name)
+
 
