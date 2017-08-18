@@ -7,11 +7,10 @@ from celery.utils.log import get_task_logger
 from .models import (Series, Seasons, Episodes)
 logger = get_task_logger(__name__)
 
-@periodic_task(run_every=(crontab(minute='*/15')), name="some_task", ignore_result=True)
+@periodic_task(run_every=(crontab(minute='*/2')), name="some_task", ignore_result=True)
 def some_task():
-    # do something
+    update_db()
     logger.info("Updated db")
-    pass
 
 
 def update_db():
