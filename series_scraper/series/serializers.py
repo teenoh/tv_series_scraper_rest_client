@@ -7,12 +7,14 @@ class SeriesSerializer(serializers.ModelSerializer):
         fields = ('name', '')
 
 class SeasonSerializer(serializers.ModelSerializer):
+    episodes = EpisodeSerializer(many=True, read_only=True)
+
     class Meta:
         model = Seasons
+        fields = ('name', 'episodes')
 
 class EpisodeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Episodes
         fields= ('name', 'download_link')
-
 
