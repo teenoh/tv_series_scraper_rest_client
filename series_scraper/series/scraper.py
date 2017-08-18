@@ -105,12 +105,12 @@ def dump_sample_data():
     episode_links = {}
     for key, value in data.items():
         episode_links.update({key: get_episodes_links(value)})
-        if counter >= 10:
-            break
-
-    with open('data.json', 'w') as fp:
-        data = json.dump(episode_links, fp)
-        fp.close()
+        if counter >= 8:
+            with open('data.json', 'w') as fp:
+                data = json.dump(episode_links, fp)
+                fp.close()
+                return
+        counter += 1
 
 
 #load json data
