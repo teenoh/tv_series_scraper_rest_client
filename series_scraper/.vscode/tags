@@ -1,0 +1,93 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+0001_initial.py	../series/migrations/0001_initial.py	1;"	kind:file	line:1
+ALLOWED_HOSTS	../series_scraper/settings.py	/^ALLOWED_HOSTS = ['*']$/;"	kind:variable	line:28
+AUTH_PASSWORD_VALIDATORS	../series_scraper/settings.py	/^AUTH_PASSWORD_VALIDATORS = [$/;"	kind:variable	line:88
+BASE_DIR	../series_scraper/settings.py	/^BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))$/;"	kind:variable	line:16
+BROKER_URL	../series_scraper/settings.py	/^BROKER_URL = 'redis:\/\/localhost:6379'$/;"	kind:variable	line:123
+CELERY_ACCEPT_CONTENT	../series_scraper/settings.py	/^CELERY_ACCEPT_CONTENT = ['application\/json']$/;"	kind:variable	line:125
+CELERY_RESULT_BACKEND	../series_scraper/settings.py	/^CELERY_RESULT_BACKEND = 'redis:\/\/localhost:6379'$/;"	kind:variable	line:124
+CELERY_RESULT_SERIALIZER	../series_scraper/settings.py	/^CELERY_RESULT_SERIALIZER = 'json'$/;"	kind:variable	line:127
+CELERY_TASK_SERIALIZER	../series_scraper/settings.py	/^CELERY_TASK_SERIALIZER = 'json'$/;"	kind:variable	line:126
+CELERY_TIME_ZONE	../series_scraper/settings.py	/^CELERY_TIME_ZONE = 'Africa\/Lagos'/;"	kind:variable	line:128
+DATABASES	../series_scraper/settings.py	/^DATABASES = {$/;"	kind:variable	line:77
+DEBUG	../series_scraper/settings.py	/^DEBUG = True$/;"	kind:variable	line:26
+Episodes	../series/models.py	/^class Episodes(models.Model):$/;"	kind:class	line:20
+INSTALLED_APPS	../series_scraper/settings.py	/^INSTALLED_APPS = [$/;"	kind:variable	line:33
+LANGUAGE_CODE	../series_scraper/settings.py	/^LANGUAGE_CODE = 'en-us'$/;"	kind:variable	line:107
+MIDDLEWARE	../series_scraper/settings.py	/^MIDDLEWARE = [$/;"	kind:variable	line:43
+Migration	../series/migrations/0001_initial.py	/^class Migration(migrations.Migration):$/;"	kind:class	line:9
+ROOT_URLCONF	../series_scraper/settings.py	/^ROOT_URLCONF = 'series_scraper.urls'$/;"	kind:variable	line:53
+SECRET_KEY	../series_scraper/settings.py	/^SECRET_KEY = 'js3+8rtrlgq677%63z!d3yp5an#_l!&10n55mqh=o#uhr(#1ey'$/;"	kind:variable	line:23
+STATIC_URL	../series_scraper/settings.py	/^STATIC_URL = '\/static\/'$/;"	kind:variable	line:121
+Seasons	../series/models.py	/^class Seasons(models.Model):$/;"	kind:class	line:12
+Series	../series/models.py	/^class Series(models.Model):$/;"	kind:class	line:4
+SeriesConfig	../series/apps.py	/^class SeriesConfig(AppConfig):$/;"	kind:class	line:4
+TEMPLATES	../series_scraper/settings.py	/^TEMPLATES = [$/;"	kind:variable	line:55
+TIME_ZONE	../series_scraper/settings.py	/^TIME_ZONE = 'Africa\/Lagos'$/;"	kind:variable	line:109
+USE_I18N	../series_scraper/settings.py	/^USE_I18N = True$/;"	kind:variable	line:111
+USE_L10N	../series_scraper/settings.py	/^USE_L10N = True$/;"	kind:variable	line:113
+USE_TZ	../series_scraper/settings.py	/^USE_TZ = True$/;"	kind:variable	line:115
+WSGI_APPLICATION	../series_scraper/settings.py	/^WSGI_APPLICATION = 'series_scraper.wsgi.application'$/;"	kind:variable	line:71
+__all__	../series_scraper/__init__.py	/^__all__ = ['celery_app']/;"	kind:variable	line:3
+__init__.py	../series/__init__.py	1;"	kind:file	line:1
+__init__.py	../series/migrations/__init__.py	1;"	kind:file	line:1
+__init__.py	../series_scraper/__init__.py	1;"	kind:file	line:1
+__str__	../series/models.py	/^    def __str__(self):$/;"	kind:member	line:17
+__str__	../series/models.py	/^    def __str__(self):$/;"	kind:member	line:25
+__str__	../series/models.py	/^    def __str__(self):$/;"	kind:member	line:9
+admin.py	../series/admin.py	1;"	kind:file	line:1
+app	../series_scraper/celery.py	/^app = Celery('series_scraper')$/;"	kind:variable	line:6
+application	../series_scraper/wsgi.py	/^application = get_wsgi_application()$/;"	kind:variable	line:16
+apps.py	../series/apps.py	1;"	kind:file	line:1
+celery.py	../series_scraper/celery.py	1;"	kind:file	line:1
+debug_task	../series_scraper/celery.py	/^def debug_task(self):$/;"	kind:function	line:15
+dependencies	../series/migrations/0001_initial.py	/^    dependencies = [$/;"	kind:variable	line:13
+download_link	../series/models.py	/^    download_link = models.URLField()$/;"	kind:variable	line:22
+dump_sample_data	../series/scraper.py	/^def dump_sample_data():$/;"	kind:function	line:102
+field	../series/migrations/0001_initial.py	/^            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='series.Seasons'),$/;"	kind:variable	line:50
+field	../series/migrations/0001_initial.py	/^            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='series.Series'),$/;"	kind:variable	line:45
+fields	../series/migrations/0001_initial.py	/^            fields=[$/;"	kind:variable	line:19
+fields	../series/migrations/0001_initial.py	/^            fields=[$/;"	kind:variable	line:27
+fields	../series/migrations/0001_initial.py	/^            fields=[$/;"	kind:variable	line:35
+get_download_link	../series/scraper.py	/^def get_download_link(episode_link):$/;"	kind:function	line:89
+get_episodes_links	../series/scraper.py	/^def get_episodes_links(series_link):$/;"	kind:function	line:68
+get_series_image	../series/scraper.py	/^def get_series_image(series_link):$/;"	kind:function	line:60
+get_series_links	../series/scraper.py	/^def get_series_links():$/;"	kind:function	line:55
+image_url	../series/models.py	/^    image_url = models.URLField(blank=True)$/;"	kind:variable	line:7
+initial	../series/migrations/0001_initial.py	/^    initial = True$/;"	kind:variable	line:11
+load_sample_data	../series/scraper.py	/^def load_sample_data():$/;"	kind:function	line:117
+logger	../series/tasks.py	/^logger = get_task_logger(__name__)$/;"	kind:variable	line:5
+manage.py	../manage.py	1;"	kind:file	line:1
+model_name	../series/migrations/0001_initial.py	/^            model_name='episodes',$/;"	kind:variable	line:48
+model_name	../series/migrations/0001_initial.py	/^            model_name='seasons',$/;"	kind:variable	line:43
+models.py	../series/models.py	1;"	kind:file	line:1
+name	../series/apps.py	/^    name = 'series'$/;"	kind:variable	line:5
+name	../series/migrations/0001_initial.py	/^            name='Episodes',$/;"	kind:variable	line:18
+name	../series/migrations/0001_initial.py	/^            name='Seasons',$/;"	kind:variable	line:26
+name	../series/migrations/0001_initial.py	/^            name='Series',$/;"	kind:variable	line:34
+name	../series/migrations/0001_initial.py	/^            name='season',$/;"	kind:variable	line:49
+name	../series/migrations/0001_initial.py	/^            name='series',$/;"	kind:variable	line:44
+name	../series/models.py	/^    name = models.CharField(max_length=120)$/;"	kind:variable	line:5
+name	../series/models.py	/^    name = models.CharField(max_length=20)$/;"	kind:variable	line:13
+name	../series/models.py	/^    name = models.CharField(max_length=20)$/;"	kind:variable	line:21
+operations	../series/migrations/0001_initial.py	/^    operations = [$/;"	kind:variable	line:16
+pagination	../series/scraper.py	/^def pagination(url):$/;"	kind:function	line:45
+scrape_site	../series/scraper.py	/^def scrape_site(url, get_image=False):$/;"	kind:function	line:34
+scraper.py	../series/scraper.py	1;"	kind:file	line:1
+season	../series/models.py	/^    season = models.ForeignKey(Seasons, on_delete=models.CASCADE)$/;"	kind:variable	line:23
+series	../series/models.py	/^    series = models.ForeignKey(Series, on_delete=models.CASCADE)$/;"	kind:variable	line:15
+settings.py	../series_scraper/settings.py	1;"	kind:file	line:1
+some_task	../series/tasks.py	/^def some_task():$/;"	kind:function	line:8
+tasks.py	../series/tasks.py	1;"	kind:file	line:1
+tests.py	../series/tests.py	1;"	kind:file	line:1
+url	../series/models.py	/^    url = models.URLField(blank = True)$/;"	kind:variable	line:14
+url	../series/models.py	/^    url = models.URLField(blank=True)$/;"	kind:variable	line:6
+urlpatterns	../series_scraper/urls.py	/^urlpatterns = [$/;"	kind:variable	line:19
+urls.py	../series_scraper/urls.py	1;"	kind:file	line:1
+views.py	../series/views.py	1;"	kind:file	line:1
+wsgi.py	../series_scraper/wsgi.py	1;"	kind:file	line:1

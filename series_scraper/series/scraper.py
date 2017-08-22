@@ -99,26 +99,21 @@ def get_download_link(episode_link):
         return links["mp4"]
 
 #dump sample data
-def dump_sample_data():
+def scrape_data():
     data = get_series_links()
-    counter = 0
     episode_links = {}
     for key, value in data.items():
         episode_links.update({key: get_episodes_links(value)})
-        if counter >= 8:
-            with open('data.json', 'w') as fp:
-                data = json.dump(episode_links, fp)
-                fp.close()
-                return
-        counter += 1
+        print("completed : " + key)
+    return episode_links
 
 
 #load json data
-def load_sample_data():
-    with open('data.json', 'r') as fp:
-        data = json.load(fp)
-        fp.close()
-        return data
+# def load_sample_data():
+#     with open('data.json', 'r') as fp:
+#         data = json.load(fp)
+#         fp.close()
+#         return data
 
 #pprint(series)
 # boy = series['agents of shield']

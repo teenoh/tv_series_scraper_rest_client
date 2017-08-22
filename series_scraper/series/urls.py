@@ -1,7 +1,7 @@
 from django.conf.urls import url, include
 
 from rest_framework import routers
-from .serializers import SeriesViewSet
+from .views import SeriesViewSet
 
 router = routers.DefaultRouter()
 router.register(r'series', SeriesViewSet)
