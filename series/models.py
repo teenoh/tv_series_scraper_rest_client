@@ -5,7 +5,7 @@ class Series(models.Model):
     name = models.CharField(max_length=120)
     url = models.URLField(blank=True)
     image_url = models.URLField(blank=True)
-
+ 
     def __str__(self):
         return self.name
 

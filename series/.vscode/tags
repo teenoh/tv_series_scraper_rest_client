@@ -29,7 +29,6 @@ apps.py	../apps.py	1;"	kind:file	line:1
 dependencies	../migrations/0001_initial.py	/^    dependencies = [$/;"	kind:variable	line:13
 dependencies	../migrations/0002_auto_20170818_1006.py	/^    dependencies = [$/;"	kind:variable	line:11
 download_link	../models.py	/^    download_link = models.URLField()$/;"	kind:variable	line:22
-dump_sample_data	../scraper.py	/^def dump_sample_data():$/;"	kind:function	line:102
 episodes	../serializers.py	/^    episodes = EpisodeSerializer(many=True, read_only=True)$/;"	kind:variable	line:10
 field	../migrations/0001_initial.py	/^            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='series.Seasons'),$/;"	kind:variable	line:50
 field	../migrations/0001_initial.py	/^            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='series.Series'),$/;"	kind:variable	line:45
@@ -47,7 +46,7 @@ get_series_image	../scraper.py	/^def get_series_image(series_link):$/;"	kind:fun
 get_series_links	../scraper.py	/^def get_series_links():$/;"	kind:function	line:55
 image_url	../models.py	/^    image_url = models.URLField(blank=True)$/;"	kind:variable	line:7
 initial	../migrations/0001_initial.py	/^    initial = True$/;"	kind:variable	line:11
-load_sample_data	../scraper.py	/^def load_sample_data():$/;"	kind:function	line:114
+logger	../tasks.py	/^logger = getLogger(__name__)$/;"	kind:variable	line:9
 model	../serializers.py	/^        model = Episodes$/;"	kind:variable	line:6
 model	../serializers.py	/^        model = Seasons$/;"	kind:variable	line:13
 model	../serializers.py	/^        model = Series$/;"	kind:variable	line:21
@@ -72,6 +71,7 @@ operations	../migrations/0002_auto_20170818_1006.py	/^    operations = [$/;"	kin
 pagination	../scraper.py	/^def pagination(url):$/;"	kind:function	line:45
 queryset	../views.py	/^    queryset = Series.objects.all()$/;"	kind:variable	line:13
 router	../urls.py	/^router = routers.DefaultRouter()$/;"	kind:variable	line:6
+scrape_data	../scraper.py	/^def scrape_data():$/;"	kind:function	line:102
 scrape_site	../scraper.py	/^def scrape_site(url, get_image=False):$/;"	kind:function	line:34
 scraper.py	../scraper.py	1;"	kind:file	line:1
 season	../models.py	/^    season = models.ForeignKey(Seasons, related_name="episodes", on_delete=models.CASCADE)$/;"	kind:variable	line:23
@@ -79,10 +79,9 @@ seasons	../serializers.py	/^    seasons = SeasonSerializer(many=True, read_only=
 serializer_class	../views.py	/^    serializer_class = SeriesSerializer$/;"	kind:variable	line:14
 serializers.py	../serializers.py	1;"	kind:file	line:1
 series	../models.py	/^    series = models.ForeignKey(Series, related_name="seasons",  on_delete=models.CASCADE)$/;"	kind:variable	line:15
-some_task	../tasks.py	/^def some_task():$/;"	kind:function	line:9
 tasks.py	../tasks.py	1;"	kind:file	line:1
 tests.py	../tests.py	1;"	kind:file	line:1
-update_db	../tasks.py	/^def update_db():$/;"	kind:function	line:14
+update_db	../tasks.py	/^def update_db():$/;"	kind:function	line:13
 url	../models.py	/^    url = models.URLField(blank = True)$/;"	kind:variable	line:14
 url	../models.py	/^    url = models.URLField(blank=True)$/;"	kind:variable	line:6
 urlpatterns	../urls.py	/^urlpatterns = [$/;"	kind:variable	line:9
