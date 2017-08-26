@@ -2,7 +2,7 @@ from django.shortcuts import render
 from rest_framework import viewsets
 from rest_framework import generics
 
-from .serializers import SeriesSerializer, SeasonSerializer
+from .serializers import SeriesSerializer, SeasonSerializer, EpisodeSerializer
 from .models import Series, Seasons, Episodes
 # Create your views here.
 
@@ -22,3 +22,8 @@ class SeasonViewSet(viewsets.ModelViewSet):
     serializer_class = SeasonSerializer
 
 class EpisodeViewSet(viewsets.ModelViewSet):
+    '''
+    This is the viewset for the Episode model
+    '''
+    queryset = Episodes.objects.all().order_by('name')
+    serializer_class = EpisodeSerializer

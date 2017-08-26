@@ -5,7 +5,8 @@ from .views import SeriesViewSet, SeasonViewSet
 
 router = routers.DefaultRouter()
 router.register(r'series', SeriesViewSet)
-router.register(r'series/seasons', SeasonViewSet)
+router.register(r'seasons', SeasonViewSet)
+router.register(r'Episode', SeasonViewSet)
 
 urlpatterns = [
     url(r'^', include(router.urls)),
