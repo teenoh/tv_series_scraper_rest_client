@@ -8,10 +8,11 @@ from .models import Series, Seasons, Episodes
 
 class SeriesViewSet(viewsets.ModelViewSet):
     '''
-    This is the viewset for the Season model
+    This is the viewset for the Series model
     '''
     queryset = Series.objects.all().order_by('name')
     serializer_class = SeriesSerializer
+    
     
 
 class SeasonViewSet(viewsets.ModelViewSet):
