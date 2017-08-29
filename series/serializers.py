@@ -1,22 +1,18 @@
 from .models import Seasons, Series, Episodes
 from rest_framework import serializers, viewsets
 
-class EpisodeSerializer(serializers.ModelSerializer):
+class EpisodeSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Episodes
-        fields= ('name', 'download_link')
+        fields= ('name', 'download_link', 'season')
 
-class SeasonSerializer(serializers.ModelSerializer):
-    episodes = EpisodeSerializer(many=True, read_only=True)
-
+class SeasonSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Seasons
-        fields = ('name', 'episodes')
+        fields = ('name', 'episodes', 'series')
 
 
-class SeriesSerializer(serializers.ModelSerializer):
-    seasons = SeasonSerializer(many=True, read_only=True)
-
+class SeriesSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Series
         fields = ('name', 'seasons')

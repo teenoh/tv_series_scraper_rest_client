@@ -5,7 +5,7 @@ class Series(models.Model):
     name = models.CharField(max_length=120)
     url = models.URLField(blank=True)
     image_url = models.URLField(blank=True)
-
+ 
     def __str__(self):
         return self.name
 
@@ -23,8 +23,8 @@ class Episodes(models.Model):
     season = models.ForeignKey(Seasons, related_name="episodes", on_delete=models.CASCADE)
 
     def __str__(self):
-        return "{ser}-{sea}-{epis}".format(ser=self.season.series,
-                                           sea=self.season,
+        return "{ser}-{sea}-{epis}".format(ser=self.season.series.name,
+                                           sea=self.season.name,
                                            epis=self.name)
 
 
