@@ -32,8 +32,9 @@ class EpisodeViewSet(viewsets.ModelViewSet):
     serializer_class = EpisodeSerializer
 
 def index(request, series_name, season_name, episode_name):
-    series = Series.objects.get(name=season_name)
-    season = Seasons.objects.get(name=season_name, series=series)
-    episode = Episodes.objects.get(name=episode_name, season = season)
+    
+    series = Series.objects.get(name=series_name.replace("-", " "))
+    season = Seasons.objects.get(name=season_name.replace("-", " "), series=series)
+    episode = Episodes.objects.get(name=episode_name.replace("-", " "), season = season)
     key = series_name + ' ' + season_name + ' ' + episode_name 
-    return JsonResponse({key: episode.download_link})
+    return JsonResponse({str(episode): episode.download_link})
