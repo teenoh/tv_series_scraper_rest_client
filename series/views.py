@@ -4,6 +4,8 @@ from rest_framework import generics
 
 from .serializers import SeriesSerializer, SeasonSerializer, EpisodeSerializer
 from .models import Series, Seasons, Episodes
+from django.http import JsonResponse
+
 # Create your views here.
 
 class SeriesViewSet(viewsets.ModelViewSet):
@@ -28,3 +30,10 @@ class EpisodeViewSet(viewsets.ModelViewSet):
     '''
     queryset = Episodes.objects.all().order_by('name')
     serializer_class = EpisodeSerializer
+
+def index(request, series_name, season_name, episode_name):
+    series = Series.objects.get(name=season_name)
+    season = Seasons.objects.get(name=season_name, series=series)
+    episode = Episodes.objects.get(name=episode_name, season = season)
+    key = series_name + ' ' + season_name + ' ' + episode_name 
+    return JsonResponse({key: episode.download_link})
