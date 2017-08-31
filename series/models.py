@@ -17,6 +17,8 @@ class Seasons(models.Model):
     def __str__(self):
         return "{ser}-{sea}".format(ser=self.series, sea=self.name)
 
+
+
 class Episodes(models.Model):
     name = models.CharField(max_length=20)
     download_link = models.URLField()
