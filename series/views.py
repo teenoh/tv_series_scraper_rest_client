@@ -33,11 +33,15 @@ class EpisodeViewSet(viewsets.ModelViewSet):
 
 def index(request, series_name, season_name, episode_name):
     
-    series = Series.objects.get(name=series_name.replace("-", " "))
-    season = Seasons.objects.get(name=season_name.replace("-", " "), series=series)
-    episode = Episodes.objects.get(name=episode_name.replace("-", " "), season = season)
-    key = series_name + ' ' + season_name + ' ' + episode_name 
-    return JsonResponse({str(episode): episode.download_link})
+    series_list = [x.name for x in Series.objects.all()]
+    series_name = series_name.replace("-", " ")
+
+    if series_name in series_list:
+        series = Series.objects.get(name=series_name)
+        season = Seasons.objects.get(name=season_name.replace("-", " "), series=series)
+        episode = Episodes.objects.get(name=episode_name.replace("-", " "), season = season)
+        key = series_name + ' ' + season_name + ' ' + episode_name 
+        return JsonResponse({str(episode): episode.download_link})
 
 def all_series_view(request):
     series = {x.name: x.image_url for x in Series.objects.all()}
@@ -58,13 +62,18 @@ def series_view(request, series_name):
             }
         }
     '''
+    series_list = [x.name for x in Series.objects.all()]
     series_name = series_name
-    
-    series_object = Series.objects.get(name=series_name)
-    season_count = series_object.seasons.count()
-    episode_count = {season.name: season.episodes.count() for season in Seasons.objects.filter(series=series_object)}
-    return JsonResponse({'name': series_name,
-                         'season_count': season_count,
-                         'episodes_count': episode_count  })
+    if series_name in series_list:
+        series_object = Series.objects.get(name=series_name)
+        season_count = series_object.seasons.count()
+        image = series_object.image_url
+        episode_count = {season.name: season.episodes.count() for season in Seasons.objects.filter(series=series_object)}
+        return JsonResponse({'name': series_name,
+                             'image': image,
+                            'season_count': season_count,
+                            'episodes_count': episode_count })
+    else:
+        return JsonResponse({"result": "series not found"})
     
 
