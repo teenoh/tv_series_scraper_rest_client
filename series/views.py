@@ -40,7 +40,7 @@ def index(request, series_name, season_name, episode_name):
     return JsonResponse({str(episode): episode.download_link})
 
 def all_series_view(request):
-    series = {x.name: "" for x in Series.objects.all()}
+    series = {x.name: x.image_url for x in Series.objects.all()}
     return JsonResponse({'result': series})
 
 def series_view(request, series_name):
@@ -59,6 +59,7 @@ def series_view(request, series_name):
         }
     '''
     series_name = series_name
+    
     series_object = Series.objects.get(name=series_name)
     season_count = series_object.seasons.count()
     episode_count = {season.name: season.episodes.count() for season in Seasons.objects.filter(series=series_object)}

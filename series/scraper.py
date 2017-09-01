@@ -64,7 +64,7 @@ def get_series_image(series_link):
         img = [x.img.get('src') for x in divs]
         return img[0]
 
-
+ 
 def get_episodes_links(series_link):
     seasons = scrape_site(series_link)
     for season, link in seasons.items():

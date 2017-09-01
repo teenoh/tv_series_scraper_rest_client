@@ -3,11 +3,14 @@ import json
 from logging import getLogger
 
 from .models import (Series, Seasons, Episodes)
-from .scraper import scrape_data
+from .scraper import scrape_data, get_series_links, get_series_image
 from background_task import background
 
 logger = getLogger(__name__)
 
+def update_images()
+    series_data =  get_series_links()
+    data_with_images = 
 
 @background(schedule=60)
 def update_db():
