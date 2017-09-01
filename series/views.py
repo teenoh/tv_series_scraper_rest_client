@@ -33,6 +33,7 @@ class EpisodeViewSet(viewsets.ModelViewSet):
 
 def index(request, series_name, season_name, episode_name):
     
+    print("it got here\n\n\n")
     series_list = [x.name for x in Series.objects.all()]
     series_name = series_name.replace("-", " ")
 
@@ -53,6 +54,7 @@ def series_view(request, series_name):
         eg
         {
             name: arrow,
+            image: image_link
             season_count: 5,
             episodes_count: {
                 season 01: 20,
