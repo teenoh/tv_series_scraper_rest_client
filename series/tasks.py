@@ -10,7 +10,15 @@ logger = getLogger(__name__)
 
 def update_images()
     series_data =  get_series_links()
-    data_with_images = 
+    data_with_images = {series: get_series_image(series_link) for series, series_link in series_data.items()}
+    series_name_list = [series.name for series in Series.objects.all()]
+
+    for series, images in data_with_images.items():
+        if series in series_name_list:
+            item  = Series.objects.get(name=series)
+            item.image_url = image_url
+            item.save()
+        continue    
 
 @background(schedule=60)
 def update_db():
